@@ -1,5 +1,5 @@
 interface Window {
-  AudioContext: typeof AudioContext
+  AudioContext: any
 }
 
 class Sound {
@@ -41,17 +41,7 @@ sound.init()
 var wave = 'square'
 var state = 'paused'
 
-let buttons = document.querySelectorAll('.waveform')
-let playBtn = document.querySelector('#play') as HTMLButtonElement
-let container = document.querySelector('.container')
-// buttons.forEach(function(button) {
-//   //   button.addEventListener('click', function() {
-//   //     cleanClass('active')
-//   //     wave = button.dataset.wave
-//   //     sound.oscillator.type = wave
-//   //     button.classList.add('active')
-//   //   })
-// })
+let playBtn = document.querySelector('#play')
 
 playBtn.addEventListener('click', function() {
   if (playBtn.textContent == 'Play') {
@@ -63,9 +53,3 @@ playBtn.addEventListener('click', function() {
     playBtn.textContent = 'Play'
   }
 })
-
-function cleanClass(rclass: string) {
-  buttons.forEach(function(button) {
-    button.classList.remove(rclass)
-  })
-}
